@@ -1,0 +1,18 @@
+Assignment#02
+
+Dear Students / Brothers.
+Modren Apps(Web and Mobile, API) Batch01 Section-B
+
+Requirements:
+
+1- Please create the exactly same HTML structure like (Home.jpg,Menu.jpg,AbouUs.jpg,ContactUs.jpg,Timing.jpg attach in same folder)
+2- Use the assets from https://drive.google.com/drive/folders/1aDgGJIn2lVVBDi8WYwPfWPNellfTAG-k?usp=sharing
+3- Please deploy into surge, and create online link
+4- Submit the assignment at link below
+
+
+(How to deploy on Surge - https://www.youtube.com/watch?v=rCfs9mRbp5E)
+
+Deadline: 19/06/2022!s
+
+Submit: https://forms.gle/Bwe7zxcLUuecZ11o8

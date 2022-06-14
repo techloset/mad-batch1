@@ -1,8 +1,8 @@
 Assignment#01 
 Dear Students / Brothers.
-Modren Application Development, Batch-04 Section-C
+Modren Application and API Development, Batch-01 Section-B
 Requirements:
 1- Please create the exactly same HTML structure like (assignment-01.png attach in same folder)
-3- Submit the assignment at link below
+2- Submit the assignment at link below
 Deadline: 04/06/2022!
 Submit: https://forms.gle/pEWe5RGKEQNhNeoN8
