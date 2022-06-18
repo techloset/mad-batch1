@@ -1,0 +1,106 @@
+/* h1, p ,button {
+    color: blueviolet;
+} */
+
+/* h3 + p {
+    color: aqua;
+}
+
+p ~ h4 {
+    color: green;
+} */
+
+/* a:link {
+   text-decoration: none;
+}
+a:hover {
+    color: green;
+   
+}
+a:active {
+    color: deeppink;
+}
+a:visited {
+    color: darkorange;
+} */
+
+/* input[type="text"]:focus {
+    background-color: yellow;
+}
+
+input[type="password"]:disabled {
+    background-color: grey;
+} 
+
+input[type="checkbox"]:checked {
+    outline: 2px solid green;
+} */
+
+/* p:nth-child(3) {
+    color: red;
+}
+p:nth-child(4) {
+    color: green;
+} */
+
+/* Pseudo Elemets */
+/* 
+#example::first-letter{
+    color: red;
+    font-size:20px
+
+}
+#example::first-line{
+    background-color:aqua;
+}
+
+#example::selection{
+    background-color:magenta;
+    color: aqua;
+} */
+
+ /* .addsubtract::before {
+    content: "Add +";
+} 
+ .addsubtract::after {
+    content: "-";
+ } */
+
+
+ /* p {
+    color: aqua;
+ } */
+
+ /* ul li a {
+    color: lawngreen;
+ }
+
+ li a {
+    color: gold;
+ }
+
+ a{
+    color: deeppink;
+ }
+  */
+ 
+  /* body{
+    background-color: aquamarine;
+  }
+ .bodyy {
+   background-color:burlywood
+
+ }
+  #body{
+    background-color: cornflowerblue;
+  } */
+
+   /* p {
+    background-color:aqua;
+    /* padding: 20px 30px 40px 50px; */
+    /* padding: 20px; */
+    /* padding: 20px 50px; */
+    /* padding: 80px 100px 80px */
+  /* } */
+   
+    
