@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Dancing+Script&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Dancing+Script&display=swap'); */
  /* @font-face {
     font-family: special ;
@@ -57,9 +58,11 @@ p {
 
 /* Fonts */
 
-/* p {
+ p {
     font-size:20px;
-    font-weight: lighter; */
+    font-family: 'Carter One', cursive;
+font-family: 'Dancing Script', cursive;
+    font-weight: lighter; 
     /* font-family: 'Carter One', cursive;
 font-family: 'Dancing Script', cursive; */
     /* font-family: 'Carter One', cursive;
@@ -67,4 +70,4 @@ font-family: 'Dancing Script', cursive; */
     /* font-family: 'Carter One'; */
      /* font-family: special;   */
     
-/* } */
+/* } 
