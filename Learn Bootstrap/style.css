@@ -1,0 +1,11 @@
+/* .container{
+    background-color: aqua;
+} */
+#col1{
+    background-color:red;
+    border:1px solid black;
+}
+#col2{
+    background-color:rgb(255, 217, 0);
+    border:1px solid black;
+}
