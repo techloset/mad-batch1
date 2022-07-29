@@ -2,7 +2,7 @@ every new OS(Window) install / fresh setup:
 1- git download - https://git-scm.com/downloads
 2-> git config --global user.name "Naveed"
 2-> git config --global user.email "learnwithnaveedsarwar@gmail.com"
-3-> when we will push code very first time (login popup will appear - you have to be login with your github credentials)
+3- when we will push code very first time (login popup will appear - you have to be login with your github credentials)
 
 every new project start (already created in github):
 1-> git clone https://github.com/naveed-rana/mad-batch1-assignment6.git
