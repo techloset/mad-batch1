@@ -33,3 +33,8 @@ console.log("flag", typeof flag);
 // var result:boolean = number1 != number2
 // var result:boolean = false || false
 // var result:boolean = true || false && true || false && true;
+// °F = (°C × 9/5) + 32
+// write a typescript program, take input of temp in C and convert into F, and print into console? 
+var tempC = 50;
+var tempF = (tempC * 9 / 5) + 32;
+console.log("Temp in F", tempF);
