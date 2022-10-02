@@ -18,7 +18,7 @@ type studentType = {
 
 var student: studentType = {
   // firstName : "Naveed",
-  // lastName: "asdf",
+  lastName: "asdf",
   rollNo: 232,
   dob: 22,
   educationHistory:{
@@ -27,7 +27,7 @@ var student: studentType = {
   }
 }
 
-var someARr: studentType [] = [{}]
+var someARr: studentType [] = [student]
 // data read
 // students[0]
 // student.rollNo
