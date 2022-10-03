@@ -1,0 +1,17 @@
+Assignment#09
+
+Dear Students,
+Modren Apps(Web and Mobile, API) Batch01 Section-B
+
+Requirements:
+
+1- Please follow instructions, from assignment07Programs.txt file
+2- Define Type / Interface / Class for each object of entity
+2- Create the public github repo
+4- Submit the assignment at link below
+
+Deadline: 02/17/2022!
+
+Submit link: https://forms.gle/CvF6amyb9AQTzgZ2A
+
+Best Of Luck 🤞 
