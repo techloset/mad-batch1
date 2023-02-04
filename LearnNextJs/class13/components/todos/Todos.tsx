@@ -5,6 +5,7 @@ import { TodoType } from "../../types/TodosTypes"
 const Todos = () => {
     const { 
         todos,
+        storeTodos,
         loader,
         description,
         setTodos,
@@ -32,7 +33,7 @@ const Todos = () => {
 
             <button onClick={getTodosHandler}>get todos</button>
             {loader && <h1>Loading.....</h1>}
-            {todos.map((todo: TodoType, index: number) => {
+            {storeTodos.map((todo: TodoType, index: number) => {
                 return (
                     <div key={index}>{todo.id}  - {todo.description}
 

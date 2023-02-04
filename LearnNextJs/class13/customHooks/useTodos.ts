@@ -1,24 +1,31 @@
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { collection, getDocs, addDoc, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage"
 import { db, storage } from '../config/firebase'
 import { TodoType } from "../types/TodosTypes"
+import { deleteTodo, fetchTodos } from "../store/todoSlice";
 
 const useTodos = () => {
-
+    const dispatch = useDispatch()
     const [todos, setTodos] = useState<TodoType[]>([])
     const [description, setDescription] = useState<string>('')
     const [loader, setLoader] = useState(false)
    const data = useSelector((store)=> store.auth)
    console.log("data from auth slice",data);
+
+
+   const storeTodos = useSelector((store)=>store.todoSlice.todos)
+   console.log("storeTodos",storeTodos);
+   
    
     // const [attachmentURL, setAttachmentURL] = useState('')
     const [attachmentImage, setAttachmentImage] = useState({})
 
     useEffect(() => {
         console.log("Todos component just render");
-        getTodosHandler()
+        dispatch(fetchTodos())
+        // getTodosHandler()
 
     }, [])
 
@@ -110,12 +117,12 @@ const useTodos = () => {
     const todoDeleteHandler = async (item: TodoType) => {
         try {
             // console.log(item.attachmentURL, item.attachmentURL.split('/'));
-            
-            const desertRef = ref(storage, `todosImages/${item.description}.png`);
-            await deleteObject(desertRef)
-            await deleteDoc(doc(db, "todos", item.id));
-            let filteredTodos = todos.filter((todo: TodoType) => item.id !== todo.id)
-            setTodos(filteredTodos)
+            dispatch(deleteTodo(item))
+            // const desertRef = ref(storage, `todosImages/${item.description}.png`);
+            // await deleteObject(desertRef)
+            // await deleteDoc(doc(db, "todos", item.id));
+            // let filteredTodos = todos.filter((todo: TodoType) => item.id !== todo.id)
+            // setTodos(filteredTodos)
         } catch (error) {
             alert(error)
         }
@@ -159,6 +166,7 @@ const useTodos = () => {
 
     return {
         todos,
+        storeTodos,
         loader,
         description,
         setTodos,
