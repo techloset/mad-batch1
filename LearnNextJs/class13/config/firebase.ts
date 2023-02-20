@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 
 
@@ -23,6 +23,6 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 const auth = getAuth(app);
 
-export {db,storage, auth, createUserWithEmailAndPassword, signInWithEmailAndPassword}
+export {db,storage, auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged}
 
 // file > storage > get download url -> firestore db

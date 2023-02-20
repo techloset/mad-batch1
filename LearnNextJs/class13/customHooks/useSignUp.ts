@@ -1,34 +1,40 @@
-import { useState } from "react"
-import { auth, createUserWithEmailAndPassword } from "../config/firebase"
+import { useState } from "react";
+import { auth, createUserWithEmailAndPassword } from "../config/firebase";
 import { toast } from "react-toastify";
-import { useRouter  } from "next/router";
-
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { doSignup } from "../store/authSlice";
 
 export default function useSignUp() {
-  const [userName, setUserName] = useState<string>("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [loader, setLoader] = useState(false)
+  const [userName, setUserName] = useState<string>("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loader, setLoader] = useState(false);
   const router = useRouter();
 
-  const onSubmitHandler = async () => {
+  const dispatch = useDispatch();
 
+  const onSubmitHandler = async () => {
     try {
-      setLoader(true)
-      await createUserWithEmailAndPassword(auth, email, password)
-      toast.success('Successfully singup!');
-      router.push('/login')
+      setLoader(true);
+      // await createUserWithEmailAndPassword(auth, email, password)
+      dispatch(
+        doSignup({
+          email,
+          password,
+        })
+      );
+      toast.success("Successfully singup!");
+      router.push("/login");
     } catch (e) {
       toast.error(e.message);
-      console.log('====================================');
+      console.log("====================================");
       console.log(e);
-      console.log('====================================');
+      console.log("====================================");
+    } finally {
+      setLoader(false);
     }
-
-    finally {
-      setLoader(false)
-    }
-  }
+  };
 
   return {
     userName,
@@ -39,6 +45,6 @@ export default function useSignUp() {
     setEmail,
     setUserName,
     setPassword,
-    onSubmitHandler
-  }
+    onSubmitHandler,
+  };
 }

@@ -1,0 +1,16 @@
+Assignment#11
+
+Dear Students,
+Modren Apps(Web and Mobile, API) Batch01 Section-B
+
+Requirements:
+
+1- todo app in nextjs - in memory
+
+Deadline: 12/02/2022!
+
+Figma Link: https://www.figma.com/file/7RvOacNJrRjoLnZmiJhbN0/arkamix-portal-(Copy)?node-id=142%3A414
+
+Submit link: https://forms.gle/JD8udn1AEgcDPc9z8
+
+Best Of Luck 🤞

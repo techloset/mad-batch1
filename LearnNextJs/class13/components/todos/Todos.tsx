@@ -14,11 +14,14 @@ const Todos = () => {
         onTodoSubmitHandler,
         todoDeleteHandler,
         setDescription,
-        onFileChangeHandle
+        onFileChangeHandle,
+        currentUserRequestLoader,
     } = useTodos()
-
+     if(currentUserRequestLoader){
+        return <div>loading....</div>
+     }
     return (
-
+       
         <div>
 
             <h1>Add new todo</h1>

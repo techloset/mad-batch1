@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import { collection, getDocs, addDoc, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage"
 import { db, storage } from '../config/firebase'
@@ -7,18 +8,27 @@ import { TodoType } from "../types/TodosTypes"
 import { deleteTodo, fetchTodos } from "../store/todoSlice";
 
 const useTodos = () => {
+
+
     const dispatch = useDispatch()
     const [todos, setTodos] = useState<TodoType[]>([])
     const [description, setDescription] = useState<string>('')
     const [loader, setLoader] = useState(false)
    const data = useSelector((store)=> store.auth)
+   const router = useRouter();
    console.log("data from auth slice",data);
 
 
    const storeTodos = useSelector((store)=>store.todoSlice.todos)
+   const auth = useSelector((store)=> store.auth)
    console.log("storeTodos",storeTodos);
+   console.log("auth calling back",auth);
    
-   
+    useEffect(()=>{
+      if (!auth.isLoggedIn &&  !auth.currentUserRequestLoader) {
+        router.push("/login");
+      }
+    },[auth])
     // const [attachmentURL, setAttachmentURL] = useState('')
     const [attachmentImage, setAttachmentImage] = useState({})
 
@@ -175,7 +185,8 @@ const useTodos = () => {
         onTodoSubmitHandler,
         todoDeleteHandler,
         setDescription,
-        onFileChangeHandle
+        onFileChangeHandle,
+        currentUserRequestLoader: auth.currentUserRequestLoader
     }
 
 }
