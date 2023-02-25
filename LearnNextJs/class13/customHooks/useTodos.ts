@@ -14,8 +14,10 @@ const useTodos = () => {
     const [todos, setTodos] = useState<TodoType[]>([])
     const [description, setDescription] = useState<string>('')
     const [loader, setLoader] = useState(false)
+    const [searchText, setSearchText] = useState('')
    const data = useSelector((store)=> store.auth)
    const router = useRouter();
+   
    console.log("data from auth slice",data);
 
 
@@ -24,11 +26,11 @@ const useTodos = () => {
    console.log("storeTodos",storeTodos);
    console.log("auth calling back",auth);
    
-    useEffect(()=>{
-      if (!auth.isLoggedIn &&  !auth.currentUserRequestLoader) {
-        router.push("/login");
-      }
-    },[auth])
+    // useEffect(()=>{
+    //   if (!auth.isLoggedIn &&  !auth.currentUserRequestLoader) {
+    //     router.push("/login");
+    //   }
+    // },[auth])
     // const [attachmentURL, setAttachmentURL] = useState('')
     const [attachmentImage, setAttachmentImage] = useState({})
 
@@ -174,6 +176,8 @@ const useTodos = () => {
 
 
 
+
+
     return {
         todos,
         storeTodos,
@@ -186,6 +190,8 @@ const useTodos = () => {
         todoDeleteHandler,
         setDescription,
         onFileChangeHandle,
+        searchText,
+        setSearchText,
         currentUserRequestLoader: auth.currentUserRequestLoader
     }
 

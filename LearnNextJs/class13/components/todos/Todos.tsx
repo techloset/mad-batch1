@@ -16,10 +16,14 @@ const Todos = () => {
         setDescription,
         onFileChangeHandle,
         currentUserRequestLoader,
+        searchText,
+        setSearchText
     } = useTodos()
      if(currentUserRequestLoader){
         return <div>loading....</div>
      }
+     console.log("searchText", searchText);
+     
     return (
        
         <div>
@@ -34,9 +38,11 @@ const Todos = () => {
                 List of Todos from firestore
             </h1>
 
+            <input type="text" placeholder="search by id" onChange={(e)=>setSearchText(e.target.value)} />
+
             <button onClick={getTodosHandler}>get todos</button>
             {loader && <h1>Loading.....</h1>}
-            {storeTodos.map((todo: TodoType, index: number) => {
+            {storeTodos.filter((todo)=>todo.id.includes(searchText)).map((todo: TodoType, index: number) => {
                 return (
                     <div key={index}>{todo.id}  - {todo.description}
 
