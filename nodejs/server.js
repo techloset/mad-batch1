@@ -1,5 +1,16 @@
 const express = require('express')
 var bodyParser = require('body-parser')
+const multer  = require('multer')
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+const upload = multer({storage: storage})
+
 
 const app = express()
 const port = 8000
@@ -25,11 +36,29 @@ app.use((req,res,next)=>{
  })
  
 
-app.post('/createPost', (req,res)=>{
-  console.log("req.body", req.body);
-  posts = [...posts, req.body]
-  res.send("post req response")
+ app.use(express.static('public'))
+// react > createPost> storage > db
+
+app.post('/createPost',upload.single('avatar'),(req,res)=>{
+  console.log("req.body", req.file);
+  
+  posts = [...posts, {...req.body,imageURL: req.file.path}]
+  res.status(200).json({
+    message: 'sucess',
+    data: posts
+  })
 })
+
+
+app.delete('/deletePost', (req,res)=>{
+  console.log("req.query", req.query.id);
+  posts = posts.filter((post)=> post.id !== req.query.id)
+  res.status(200).json({
+    message: 'sucess',
+    data: posts
+  })
+})
+
 
 app.get('/getPosts',(req, res) => {
   // get posts
@@ -72,6 +101,8 @@ app.get('/getPosts',(req, res) => {
   }
 
 })
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
