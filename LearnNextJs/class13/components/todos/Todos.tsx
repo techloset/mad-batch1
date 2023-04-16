@@ -42,7 +42,7 @@ const Todos = () => {
 
             <button onClick={getTodosHandler}>get todos</button>
             {loader && <h1>Loading.....</h1>}
-            {storeTodos.filter((todo)=>todo.id.includes(searchText)).map((todo: TodoType, index: number) => {
+            {storeTodos?.filter((todo)=>todo.id.includes(searchText)).map((todo: TodoType, index: number) => {
                 return (
                     <div key={index}>{todo.id}  - {todo.description}
 
