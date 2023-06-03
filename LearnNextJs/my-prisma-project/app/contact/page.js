@@ -1,6 +1,8 @@
+
 import prisma from "@/config/prismaClient"
 async function getData() {
   try {
+    console.log("");
     const data = await prisma.user.findMany()
     return data;
   } catch (error) {
@@ -17,6 +19,11 @@ export default async function Contact() {
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
           <p>contact page</p>
+          {userData?.map((user)=>{
+            return (
+              <p>email:{user.email}</p>
+            )
+          })}
         </div>
       </main>
     )
