@@ -1,0 +1,38 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  email String  @unique
+  name  String?
+  recipes Recipes[]
+  createdAt  DateTime   @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Recipes {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  name  String?
+  user User @relation(fields: [userId], references: [id])
+  userId String @db.ObjectId
+  instructions Instructions[]
+  cookingTime Int
+  difficultyLevel String
+  createdAt  DateTime   @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model Instructions{
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  description String?
+  recipes Recipes @relation(fields: [recipeId], references: [id])
+  recipeId String @db.ObjectId
+}

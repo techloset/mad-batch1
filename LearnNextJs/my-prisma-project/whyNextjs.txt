@@ -1,0 +1,9 @@
+Web => backend + frontend => nextjs
+Web + mobile => nextjs
+mobile => nodejs
+
+-------------------
+nextjs
+
+- ts
+- prisma / mongoose

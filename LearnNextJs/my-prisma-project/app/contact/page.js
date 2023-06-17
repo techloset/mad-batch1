@@ -1,3 +1,4 @@
+
 import prisma from "@/config/prismaClient"
 async function getData() {
   try {
