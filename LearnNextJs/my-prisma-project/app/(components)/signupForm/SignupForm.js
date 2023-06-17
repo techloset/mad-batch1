@@ -7,7 +7,7 @@ export default function SignupForm() {
     const [email, setEmail] = useState("")
     const onSubmitHandler = async () => {
         try {
-           let res = await fetch('http://localhost:3000/signup', {
+           let res = await fetch('/api/new', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json', // Set the appropriate content type for your request
